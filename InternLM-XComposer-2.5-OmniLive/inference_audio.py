@@ -13,7 +13,7 @@ from swift.llm import (
 from swift.utils import seed_everything
 
 model_type = ModelType.qwen2_audio_7b_instruct
-model_id_or_path = "internlm/internlm-xcomposer2d5-ol-7b"
+model_id_or_path = "/share/nlp/tuwenming/projects/InternLM-XComposer/internlm-xcomposer2d5-ol-7b"
 template_type = get_default_template_type(model_type)
 print(f"template_type: {template_type}")
 
