@@ -23,6 +23,7 @@ model, tokenizer = get_model_tokenizer(
     model_id_or_path=model_id_or_path,
     model_dir="audio",
     model_kwargs={"device_map": "cuda:0"},
+    trust_remote_code=True
 )
 model.generation_config.max_new_tokens = 256
 template = get_template(template_type, tokenizer)
