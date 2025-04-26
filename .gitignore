@@ -129,3 +129,4 @@ share4v.egg-info
 wandb
 checkpoints
 playground/data/eval/
+*.model
