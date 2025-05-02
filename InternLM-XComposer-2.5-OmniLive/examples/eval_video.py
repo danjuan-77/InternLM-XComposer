@@ -500,7 +500,8 @@ def inference(args):
             get_real_path(task_path, data['video'])
             if data['video'] else None
         )
-    
+        print(f">>> text input=:{text}")
+
         if video and not audio_list and not image_list:
             # Case 1: 仅视频
             video_path = video
