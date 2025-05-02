@@ -223,7 +223,7 @@ def main():
     
     args = parser.parse_args()
 
-    model = init_model()
+    model, tokenizer = init_model()
     if args.dtype == 'fp16':
         model.half().cuda()
     elif args.dtype == 'fp32':
@@ -231,7 +231,7 @@ def main():
     if args.num_gpus > 1:
         from accelerate import dispatch_model
         device_map = auto_configure_device_map(args.num_gpus)
-        model, tokenizer = dispatch_model(model, device_map=device_map)    
+        model = dispatch_model(model, device_map=device_map)    
     model.tokenizer = tokenizer
 
     task_path = args.task_path
