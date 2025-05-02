@@ -281,7 +281,7 @@ def main():
         print(f">>> text input=:{text}")
 
         audio_path = concat_audio(audio_list) if len(audio_list) > 1 else audio_list[0]
-        query = "<Audio>"+text
+        query = "<audio>"+text
         response, _ = inference(model, template, query, audios=audio_path)
         pred_record = {
             "task": _task,
