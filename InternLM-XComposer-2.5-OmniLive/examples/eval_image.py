@@ -284,11 +284,11 @@ def main():
 
 
 
-        question = 'Analyze the given image in a detail manner'
-        image = ['../examples/dubai.png']
+        # question = 'Analyze the given image in a detail manner'
+        # image = ['../examples/dubai.png']
         
-        # question = text
-        # image = image_list
+        question = text
+        image = image_list
 
         with torch.autocast(device_type='cuda', dtype=torch.float16):
             response, _ = model.chat(tokenizer, question, image, do_sample=False, num_beams=3, use_meta=True)
