@@ -281,8 +281,9 @@ def main():
         print(f">>> text input=:{text}")
 
         audio_path = concat_audio(audio_list) if len(audio_list) > 1 else audio_list[0]
-        query = "<audio>Detect the language and recognize the speech."
-        response, _ = inference(model, template, query, audios="examples/audios/chinese.mp3")
+        # query = "<audio>Detect the language and recognize the speech."
+        query = text
+        response, _ = inference(model, template, query, audios=audio_path)
         pred_record = {
             "task": _task,
             "subtask": _subtask,
@@ -290,7 +291,7 @@ def main():
             "predict": response,
         }
         predictions.append(pred_record)
-        print(f'query: {query}')
+        # print(f'query: {query}')
         
         print('>>> ans=:', pred_record)
         
