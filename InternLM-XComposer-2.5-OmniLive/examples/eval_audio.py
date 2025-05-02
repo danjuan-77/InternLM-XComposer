@@ -17,19 +17,19 @@ template = get_template(template_type, tokenizer)
 seed_everything(42)
 
 # Chinese ASR
-query = 'Detect the language and recognize the speech.'
+query = '<audio>Detect the language and recognize the speech.'
 response, _ = inference(model, template, query, audios='examples/audios/chinese.mp3')
 print(f'query: {query}')
 print(f'response: {response}')
 
 # English ASR
-query = 'Detect the language and recognize the speech.'
+query = '<audio>Detect the language and recognize the speech.'
 response, _ = inference(model, template, query, audios='examples/audios/english.mp3')
 print(f'query: {query}')
 print(f'response: {response}')
 
 # Audio Cls
-query = 'lassify the audio.'
+query = '<audio>Classify the audio.'
 response, _ = inference(model, template, query, audios='examples/audios/cls_cat.wav')
 print(f'query: {query}')
 print(f'response: {response}')
