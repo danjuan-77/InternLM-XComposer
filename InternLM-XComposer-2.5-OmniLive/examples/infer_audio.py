@@ -11,7 +11,7 @@ template_type = get_default_template_type(model_type)
 print(f'template_type: {template_type}')
 
 model, tokenizer = get_model_tokenizer(model_type, torch.float16, model_id_or_path=model_id_or_path,
-                                       model_kwargs={'device_map': 'cuda:3'})
+                                       model_kwargs={'device_map': 'cuda'})
 model.generation_config.max_new_tokens = 256
 template = get_template(template_type, tokenizer)
 seed_everything(42)
