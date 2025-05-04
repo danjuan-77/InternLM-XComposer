@@ -233,7 +233,7 @@ def main():
         device_map = auto_configure_device_map(args.num_gpus)
         model = dispatch_model(model, device_map=device_map)    
     model.tokenizer = tokenizer
-    model.generation_config.max_new_tokens = 256
+    # model.generation_config.max_new_tokens = 256
     task_path = args.task_path
     task_name = f"L{task_path.rsplit('/', 1)[0][-1]}_{task_path.rsplit('/', 1)[-1]}"
     model_name = "IXC2.5-OL"
