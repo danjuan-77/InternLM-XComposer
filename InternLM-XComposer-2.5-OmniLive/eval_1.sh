@@ -17,6 +17,6 @@ export CUDA_VISIBLE_DEVICES=1
 # Level5
 python examples/eval_video.py --task_path /share/nlp/tuwenming/projects/HAVIB/data/levels/level_5/AVLG
 
-python examples/eval_video.py --task_path /share/nlp/tuwenming/projects/HAVIB/data/levels/level_5/AVQA
+# python examples/eval_video.py --task_path /share/nlp/tuwenming/projects/HAVIB/data/levels/level_5/AVQA
 
 # nohup bash eval_1.sh > /share/nlp/tuwenming/projects/HAVIB/logs/eval_IXC2.5-OL_gpu2_$(date +%Y%m%d%H%M%S).log 2>&1 &

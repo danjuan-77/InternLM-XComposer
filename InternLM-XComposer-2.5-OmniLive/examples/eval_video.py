@@ -448,7 +448,7 @@ def load_video(vis_path, num_frm=16, max_clip=4):
 
 def inference(args):
     ixc_tokenizer = AutoTokenizer.from_pretrained(f'{args.ixc_model_path}/merge_lora', trust_remote_code=True)
-    ixc_model = AutoModelForCausalLM.from_pretrained(f'{args.ixc_model_path}/merge_lora', device_map="cuda:0", trust_remote_code=True).eval().cuda().to(torch.bfloat16)
+    ixc_model = AutoModelForCausalLM.from_pretrained(f'{args.ixc_model_path}/merge_lora', device_map="cuda", trust_remote_code=True).eval().cuda().to(torch.bfloat16)
     ixc_model.tokenizer = ixc_tokenizer
 
     
