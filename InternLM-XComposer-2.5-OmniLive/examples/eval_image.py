@@ -304,6 +304,7 @@ def main():
             "id": _id,
             "predict": response,
         }
+        predictions.append(pred_record)
         print('>>> ans=:', pred_record)
         
     with open(save_prediction_json, 'w', encoding='utf-8') as json_file:
