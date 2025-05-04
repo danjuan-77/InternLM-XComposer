@@ -286,12 +286,17 @@ def main():
 
         # question = 'Analyze the given image in a detail manner'
         # image = ['../examples/dubai.png']
-        
-        question = text
-        image = image_list
+        try:
+            question = text
+            image = image_list
 
-        with torch.autocast(device_type='cuda', dtype=torch.float16):
-            response, _ = model.chat(tokenizer, question, image, do_sample=False, num_beams=3, use_meta=True)
+            with torch.autocast(device_type='cuda', dtype=torch.float16):
+                response, _ = model.chat(tokenizer, question, image, do_sample=False, num_beams=3, use_meta=True)
+                
+        except Exception as e:
+            # 捕获任何异常，并把完整 traceback 当作 output
+            tb = traceback.format_exc()
+            response = f"Error during inference:\n{tb}"
         
         pred_record = {
             "task": _task,
